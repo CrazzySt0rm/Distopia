@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+
+<style>
+    body {
+    background-image: url("https://img1.akspic.ru/crops/8/9/7/2/7/172798/172798-mustang_shelby_gt500-ford_shelby_gt500_2020_goda-ford_shelbi_gt500_2021_goda-2020_ford_mustang-shelbi_mustang-1920x1080.jpg");
+    }
+
+    .button28 {
+      position: relative;
+      display: inline-block;
+      font-size: 90%;
+      font-weight: 700;
+      color: rgb(209,209,217);
+      text-decoration: none;
+      text-shadow: 0 -1px 2px rgba(0,0,0,.2);
+      padding: .5em 1em;
+      outline: none;
+<!--      border-radius: 3px;-->
+      border-radius: 100%;
+      background: linear-gradient(rgb(110,112,120), rgb(81,81,86)) rgb(110,112,120);
+      box-shadow:
+       0 1px rgba(255,255,255,.2) inset,
+       0 3px 5px rgba(0,1,6,.5),
+       0 0 1px 1px rgba(0,1,6,.2);
+      transition: .2s ease-in-out;
+      opacity: 0.7;
+    }
+    .button28:hover:not(:active) {
+      background: linear-gradient(rgb(126,126,134), rgb(70,71,76)) rgb(126,126,134);
+      border-radius: 100%;
+    }
+    .button28:active {
+      top: 1px;
+      background: linear-gradient(rgb(76,77,82), rgb(56,57,62)) rgb(76,77,82);
+      border-radius: 100%;
+      box-shadow:
+       0 0 1px rgba(0,0,0,.5) inset,
+       0 2px 3px rgba(0,0,0,.5) inset,
+       0 1px 1px rgba(255,255,255,.1);
+    }
+
+
+    .nz {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+
+    }
+
+    .hz {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+
+    }
+    .bs {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    }
+</style>
+
+
+
+<div class="bs">
+    <button class="button28" onclick="document.getElementById('player').play()">Воспроизведение</button>
+    <button class="button28" onclick="document.getElementById('player').pause()">Пауза</button>
+    <button class="button28" onclick="audio=document.getElementById('player'); audio.currentTime=0; audio.pause(); ">Сначала</button>
+    <button class="button28" onclick="document.getElementById('player').volume+=0.1">Громкость +</button>
+    <button class="button28" onclick="document.getElementById('player').volume-=0.1">Громкость -</button>
+</div>
+
+<div class="hz">
+    <audio id="player" controls ="controls" autoplay="autoplay" loop="loop">
+        <source src="https://s.muzrecord.com/files/killteq-amp-dhash-feat-domiex-unholy.mp3" type="audio/mp3">
+        <source src="https://s42-hzfi.freeconvert.com/task/67458d5290dffa4bf0b4b91e/killteq-amp-dhash-feat-domiex-unholy.ogg">
+    </audio>
+
+</div>
+
+<style>
+    audio::-webkit-media-controls {
+    display: none;
+    }
+</style>
+
+
+<style>
+    .form-signin {
+        width: 100%;
+        max-width: 330px;
+        margin: auto;
+
+      @include glassmorphism();
+      border-radius: 3px;
+
+      h1 {
+        @include glassmorphism();
+        margin-top: 0px;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+        color:#fff;
+        padding:15px;
+        text-align:center;
+      }
+
+      form {
+        padding:15px;
+
+        .btn {
+          @include glassmorphism;
+          color:#fff;
+
+          &:hover, &:focus {
+            background: rgba(255,255,255,0.1);
+            box-shadow:none;
+          }
+        }
+
+        .form-control:focus {
+          border-color:#ced4da;
+          box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+        }
+      }
+
+       .copyright {
+         text-align:center;
+         color:rgba(255,255,255,0.65);
+        }
+
+      .form-control {
+        background:rgba(255,255,255,0.9);
+
+      }
+
+      .form-check {
+        display:flex;
+        align-items:center;
+        color:rgba(255,255,255,0.65);
+
+
+        label {
+          font-size:0.9em;
+        }
+
+        input {
+          margin-right:0.5em;
+
+          &:checked {
+            background-color:#9ce060;
+            border-color: #81c63f;
+          }
+        }
+      }
+
+        .form-floating {
+            &:focus-within {
+                z-index: 2;
+            }
+        }
+
+        input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    }
+</style>
+
+<script>
+    function addItem() {
+        alert("Данные успешно сохранены!")
+    }
+</script>
+
+
+<main class="form-signin">
+
+    <h1 style="color: #fff" class="h3">Сообщение</h1>
+
+    <form action="dystopia_message" method="post" enctype="multipart/form-data">
+
+
+        <div class="form-floating">
+            <input type="text" class="form-control" name="name" id="floatingInput" placeholder="" required>
+            <label for="floatingInput">Ваше имя</label>
+        </div>
+        <div class="form-floating">
+            <input type="tel" class="form-control" name="phone" id="floatingPassword" placeholder="" required>
+            <label for="floatingPassword">Ваш телефон</label>
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control" name="message" id="floatingInput02" placeholder="" required>
+            <label for="floatingInput">Сообщение</label>
+        </div>
+
+        <div class="checkbox mb-3">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" value="1" name="remember_me" id="rememberMeSwitch">
+                <label class="form-check-label" for="rememberMeSwitch"> Запомнить меня</label>
+            </div>
+
+        </div>
+        <!--        <button class="w-100 btn btn-lg" type="submit" onclick="switch();">Отправить</button>-->
+        <button class="w-100 btn btn-lg" type="submit" onclick="addItem();"> Отправить </button>
+
+    </form>
+    <!--    <p class="copyright">&copy; 2021</p>-->
+</main>
+
+</body>
+</html>
