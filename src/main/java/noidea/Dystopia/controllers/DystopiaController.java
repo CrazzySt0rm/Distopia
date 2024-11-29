@@ -14,4 +14,9 @@ public class DystopiaController {
     public String getDistopiaOne() {
         return "home";
     }
+
+    @GetMapping("/animation_3D")
+    public String getAnim() {
+        return "animation_3D";
+    }
 }
