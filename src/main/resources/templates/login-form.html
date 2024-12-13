@@ -2,9 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login</title>
 </head>
+
+<style>
+    body {
+
+
+    background-size: cover;
+    background-image: url(https://4kwallpapers.com/images/wallpapers/acheron-honkai-star-3840x2160-19696.jpg);
+
+<!--    background-image: url(https://cdna.artstation.com/p/assets/images/images/023/482/466/large/billy-christian-414804-aethervial-final.jpg?1579346483);-->
+<!--    background-image: url(https://image.fonwall.ru/o/qc/fantasy-art-city-nrfw.jpg?auto=compress&fit=crop&w=1920&h=1080&domain=img3.fonwall.ru);-->
+<!--    background-image: url(https://www.zastavki.com/pictures/1920x1080/2024/Space_Anime_astronaut_girl_against_the_backdrop_of_the_planet_171612_23.jpg);-->
+<!--    background-image: url(https://images.wallpaperscraft.ru/image/single/vetrovaia_turbina_tumannost_zvezdnoe_nebo_179836_1920x1080.jpg);-->
+<!--    background-image: url(https://kartinki.pics/pics/uploads/posts/2022-08/1659644964_45-kartinkin-net-p-voina-abstraktsiya-krasivo-57.jpg);-->
+
+    }
+
+    .form {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    }
+    .rounded-full {
+    border-radius: 100%;
+    }
+    .bar {
+    position: relative;
+    background: #FFF;
+    border-radius: 3px;
+
+    transition: 0.5s;
+
+    width: 150px;
+    height: 20px;
+    display: flex;
+    justify-content: column;
+    }
+
+    .btn {
+          @include glassmorphism;
+          background: rgba(255,255,255,0.1);
+          margin-top: 10px;
+
+          &:hover, &:focus {
+            background: rgba(255,255,255,0.1);
+            box-shadow:none;
+          }
+</style>
 <body>
+
+<div class="form">
+    <form action="#" method="post">
+<!--        <div class="shrink-0 group block">-->
+<!--            <div class="flex items-center">-->
+<!--                                <img class="rounded-full"-->
+<!--                                     src="https://99px.ru/sstorage/1/2013/04/10404132051533357.gif"-->
+<!--                                     alt="Avatar">-->
+<!--                <div class="ms-3">-->
+<!--                    <h3 class="font-semibold text-gray-800 dark:text-white">Администратор</h3>-->
+<!--                    <p class="text-sm font-medium text-gray-400 dark:text-neutral-500">SCSerafim@mail.ru</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+        <label>Name</label>
+        <input class="bar" type="text" name="username" placeholder="username">
+        <label>Password</label>
+        <input class="bar" type="password" name="password" placeholder="password">
+        <input type="submit" name="Login" value="Login" class="btn">
+    </form>
+</div>
+
 
 </body>
 </html>
