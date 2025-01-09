@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width: device-width, initial-scale=1.0">
     <title>Fantasy</title>
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Feather.png">
 </head>
 
 <div class="navbar">
@@ -20,20 +22,65 @@
 </div>
 
 
+<!--    <div class="time">-->
+<!--        <div class="time_form">-->
+<!--            <p id="date" style="font-size:20px;"></p>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash;    <p>Серверное время <span></span> <span th:text="${serverTime}"/></p>&ndash;&gt;-->
+<!--    </div>-->
+
+
+
+
+
+
+
+
 <style>
 
     body {
+
     background: linear-gradient(-45deg, #000, #fff);
     background-image: url(https://image.fonwall.ru/o/wo/knight-shield-sword.jpg?auto=compress&fit=crop&w=1920&h=1080&domain=img1.fonwall.ru), no-repeat;
     cursor: url(https://cur.cursors-4u.net/sports/spo-1/spo26.cur), auto;
 <!--    cursor: url("images/cursor.cur"), auto;-->
     }
     a {
-    cursor: url("images/cursor.cur"), auto;
+<!--    cursor: url("images/cursor.cur"), auto;-->
     }
 
+
     button {
-    cursor: url("images/cursor.cur"), auto;
+<!--    cursor: url("images/cursor.cur"), auto;-->
+    }
+
+
+
+
+
+    .mail {
+    background: url(https://trikky.ru/wp-content/blogs.dir/1/files/2020/06/08/image-12.jpeg);
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 20px;
+
+
+    border-radius: 50%;
+    }
+
+    .mail_container {
+    margin-top: 50%;
+    margin: auto;
     }
 
 
@@ -116,27 +163,6 @@
        0 2px 3px rgba(0,0,0,.5) inset,
        0 1px 1px rgba(255,255,255,.1);
     }
-
-
-    .box {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-  width: 250px;
-  height: 250px;
-  background: grey;
-  background-image: url();
-  transition: all .5s; ease 2s;
-}
-.box:hover {
-  border-radius: 50%;
-  transform: rotate(360deg);
-}
-
-h1 {padding: 40px; text-align: center; font-size: 1.5em;}
-
-    li a {text-decoration : none; color : #2d2f31;}
-
 
     nav1 {
       width : 300px;
@@ -290,6 +316,8 @@ h1 {padding: 40px; text-align: center; font-size: 1.5em;}
     justify-content: right;
     }
 
+
+
     .klik {
     margin-top: 20px;
     display: flex;
@@ -299,6 +327,35 @@ h1 {padding: 40px; text-align: center; font-size: 1.5em;}
     display: flex;
     justify-content: right;
     }
+
+    .time {
+    margin: auto;
+
+    }
+
+
+    .time_form_x {
+
+    background: linear-gradient(to right, #000000, #434343);;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 140px;
+
+
+
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+
+    }
+
+
 
 
   .custom-btn {
@@ -388,6 +445,7 @@ h1 {padding: 40px; text-align: center; font-size: 1.5em;}
     -moz-transform: rotateX(-90deg);
     transform: rotateX(-90deg);
   }
+
 
 
 </style>
@@ -483,69 +541,117 @@ h1 {padding: 40px; text-align: center; font-size: 1.5em;}
     }
 </script>
 
+<script>
+    function addMail() {
+        alert("Письмо успешно отправлено.")
+    }
+</script>
 
+<script>
+    setInterval(() => {
+        const now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let seconds = now.getSeconds();
+
+        // Добавляем ведущий ноль к минутам и секундам, если они меньше 10
+        minutes = String(minutes).padStart(2, '0');
+        seconds = String(seconds).padStart(2, '0');
+
+        document.querySelector('#date').innerHTML = `${hours}:${minutes}:${seconds}`;
+    }, 1000);
+</script>
 <body>
 
-
-<div class="rndfr">
-    <p>
-        <iframe src="https://the-radio.ru/radio/megahit-r1295#" name="radio" width="100%" height="200"></iframe>
-    </p>
+<div class="time_form_x">
+    <p id="date" style="font-size:20px;"></p>
 </div>
+
+<div class="mail">
+    <div class="mail_container">
+        <form action="/create_email" method="post" enctype="multipart/form-data">
+            <label>
+                <input type="text" name="message" placeholder="e-mail">
+            </label><br><br>
+            <input type="submit" class="button28" value="отправить письмо" onclick="addMail()"><br><br>
+        </form>
+    </div>
+</div>
+
+<!--<div class="time">-->
+<!--    Current time is <span th:text="${serverTimeH}"/> hours, <span th:text="${serverTimeM}"/> minutes.-->
+<!--</div>-->
 
 <div class="window">
     <input type="button" class="btn-12" value="Напоминание" onclick="addItem();"/>
 </div>
 
+<div class="dl_w">
+    <h1>Изображение из базы данных:</h1>
+    <h1>Image Display</h1>
+    <!-- Здесь будет отображаться изображение -->
+    <img th:src="'data:image/jpeg;base64,' + ${imageData}" alt="Image" />
 
+
+    <a href="#" class="button28">Скачать</a>
+
+<!--    <img th:src="@{'data:images_xt/jpeg;base64,' + ${imageData}}"/>-->
+
+<!--    <p th:if="${#strings.isEmpty(imageData)}">Image not found.</p>-->
+
+<!--    <img th:src="@{'data:image/jpeg;base64,'+${imageData.generateBase64Image()}}" />-->
+
+</div>
 
 
 <div class="card">
     <menu>
         <details>
-            <!--    <form action="/image_stat/create" method="post" enctype="multipart/form-data">-->
-            <h1 class="app-title">
-                <i class="fas fa-file-upload"></i>
-                GeeksforGeeks
-            </h1>
-            <h3 class="app-subtitle">
-                File Upload with Progress Bar
-            </h3>
-            <label for="fileInput" class="file-label">
-                <i class="fas fa-cloud-upload-alt"></i>
-                Choose a file
-            </label>
-            <input type="file" id="fileInput" name="file1" class="file-input"/>
-            <div class="progress-container">
-                <div class="progress-bar" id="progressBar"></div>
-                <div class="progress-text" id="progressText"></div>
-            </div>
-            <div class="file-details">
-                <div class="file-name" name="file1" id="fileName"></div>
-                <button class="clear-button" id="clearButton">
-                    <i class="fas fa-times"></i>
-                    Clear
-                </button>
-            </div>
-            <div class="preview-container" id="previewContainer"></div>
 
-            <input type="submit" value="отправить">
-            <!--    <button type="submit">-->
-            <!--        Отправить-->
-            <!--    </button>-->
-            <div class="modal" id="myModal">
-                <span class="close" id="closeModal">&times;</span>
-                <img class="modal-content" id="uploadedImageModal">
-            </div>
-            <script src="app.js"></script>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+
+
+<!--            <form action="/image_stat/create" method="post" enctype="multipart/form-data">-->
+                <h1 class="app-title">
+                    <i class="fas fa-file-upload"></i>
+                    GeeksforGeeks
+                </h1>
+                <h3 class="app-subtitle">
+                    File Upload with Progress Bar
+                </h3>
+                <label for="fileInput" class="file-label">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    Choose a file
+                </label>
+                <input type="file" id="fileInput" name="file" class="file-input"/>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                    <div class="progress-text" id="progressText"></div>
+                </div>
+                <div class="file-details">
+                    <div class="file-name" name="file" id="fileName"></div>
+                    <button class="clear-button" id="clearButton">
+                        <i class="fas fa-times"></i>
+                        Clear
+                    </button>
+                </div>
+                <div class="preview-container" id="previewContainer"></div>
+
+                <input type="submit" value="отправить">
+                <!--    <button type="submit">-->
+                <!--        Отправить-->
+                <!--    </button>-->
+                <div class="modal" id="myModal">
+                    <span class="close" id="closeModal">&times;</span>
+                    <img class="modal-content" id="uploadedImageModal">
+                </div>
+
+            </form>
         </details>
     </menu>
 </div>
 
 
-<!--<img src="https://images.wallpaperscraft.ru/image/single/cherep_ostrov_misticheskij_124574_1280x720.jpg" width="300" height="200">-->
-
-<!--<div class="box"></div>-->
 
 <!--____________________________________________________________________-->
 
@@ -667,16 +773,27 @@ h1 {padding: 40px; text-align: center; font-size: 1.5em;}
 
 <menu>
     <details>
-        <div class="hw05">
-            <iframe src="https://vk.com/video_ext.php?oid=-221135691&id=456239289&hash=74a2e79a9e688ee0"
-                    width="640" height="360" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media;
-                    fullscreen; picture-in-picture"></iframe>
+        <div class="hw06">
+
         </div>
     </details>
 </menu>
 
+<menu>
+    <details>
+        <div class="hw05">
+
+        </div>
+    </details>
+</menu>
+
+
+<a href="http://wotpack.ru" th:text="@{one}" class="button28"></a>
+
+
 <a href="https://github.com/CrazzySt0rm?tab=repositories" target="_blank">
-    <button class="custom-btn btn-12" ><span>Hub</span><span>Git</span></button></a>
+    <button class="custom-btn btn-12"><span>Hub</span><span>Git</span></button>
+</a>
 
 
 <div class="pagination">

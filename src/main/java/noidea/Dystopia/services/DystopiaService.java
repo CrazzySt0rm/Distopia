@@ -18,9 +18,11 @@ public class DystopiaService {
 
     public Dystopia createDist(DystopiaDTO dystopiaDTO) {
         return dystopiaRepository.save(Dystopia.builder()
-//                .name(dystopiaDTO.getName())
-//                .phone(dystopiaDTO.getPhone())
+                .name(dystopiaDTO.getName())
+                .phone(dystopiaDTO.getPhone())
                 .message(dystopiaDTO.getMessage())
+                .gender(dystopiaDTO.getGender())
+                .studentCourses(dystopiaDTO.getStudentCourses())
                 .build());
 
     }

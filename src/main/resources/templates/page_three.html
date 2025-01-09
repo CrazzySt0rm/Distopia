@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width: device-width, initial-scale=1.0">
     <title>page-three</title>
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Gpadient.png">
 </head>
 
 <style>
@@ -13,8 +15,8 @@
 
     body {
     height: 100vh;
-    background-size: cover;
-    background-image: url(https://getwallpapers.com/wallpaper/full/b/e/6/1516868-hd-wallpaper-1920x1080-1920x1080-high-resolution.jpg);
+
+    background-image: url(https://img1.akspic.ru/crops/8/3/0/4/6/164038/164038-illustracia-svet-ashamaluevmuzyka-osveshhenie-purpur-1920x1080.jpg);
     cursor: url(https://cur.cursors-4u.net/sports/spo-1/spo26.cur), auto;
 <!--    cursor: url("images/cursor.cur"), auto;-->
     }
@@ -59,6 +61,34 @@
     .field-message {
     background: linear-gradient(-45deg, #000, #fff);
     }
+
+    .fset {
+
+            display: flex;
+            width: 50px;
+            height: 150px;
+            justify-content: center;
+            background: pink;
+        }
+
+        .gf {
+        background: url(https://i.pinimg.com/originals/2f/91/f6/2f91f606d966ff3dbabf72b5f286a9f5.jpg);
+        width: 300px;
+        height; 300px;
+
+        display: flex;
+        justify-content: center;
+        }
+
+        .xv {
+        position: fixed;
+        bottom: 0;
+        }
+
+        .title {
+        display: flex;
+        justify-content: center;
+        }
 
     .button28 {
       position: relative;
@@ -124,15 +154,15 @@
     }
     .card {
 
-    background: pink;
-    background: url(https://img3.akspic.ru/previews/8/0/5/9/7/179508/179508-graficeskij_dizajn-huawei_nova_11_pro_8gb_256gb_6_7-huawei-poster-dizajn-360x640.jpg);
+    background: linear-gradient(-45deg, #000, #fff);
+<!--    background: url(https://img3.akspic.ru/previews/8/0/5/9/7/179508/179508-graficeskij_dizajn-huawei_nova_11_pro_8gb_256gb_6_7-huawei-poster-dizajn-360x640.jpg);-->
     max-width: 100%;
     max-height: 100%;
 <!--    margin: 0 auto;-->
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: column;
     flex-wrap: wrap;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -177,126 +207,88 @@
     var info = green.getInfo();
 </script>
 
-
-
-
 <body>
 
-<div class="wrapper">
-    <div class="size01">
-        <div class="card">
-            <h2 class="title">
-                Messenger
-            </h2>
-            <hr>
-            <div class="field_message">
-                <p class="text">
-                    Здесь будут размещаться сообщения пользователей.
-                </p>
 
+<!--<img th:src="@{'data:image/84.jpg;base64,' +${image.generateBase64Image()}}"/>-->
+
+<!--<div class="fset">-->
+<!--    -->
+<!--    <fieldset>-->
+<!--        <form action="home"><input type="submit" class="button28" value="1"></form>-->
+<!--        <form action="animation_3D"><input type="submit" class="button28" value="2"></form>-->
+<!--        <form action="page_four"><input type="submit" class="button28" value="4"></form>-->
+<!--    </fieldset>-->
+<!--</div>-->
+
+
+<div class="wrapper">
+
+    <div class="size01">
+
+        <div class="card">
+            <div class="title">
+                <h2>Messenger</h2>
             </div>
-            <p class="text">
-                Здесь будут размещаться сообщения пользователей.
-            </p>
+
+
+
 
             <div class="msg">
                 <div class="text_area">
                     <form action="dystopia_message" method="post" enctype="multipart/form-data">
                         <input type="text" class="navbar_x" name="message">
-<!--                        <button type="submit" hidden="hidden"></button>-->
+                        <!--                        <button type="submit" hidden="hidden"></button>-->
                     </form>
+
                 </div>
             </div>
-
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-            </ul>
-
-
 
             <div class="msg_response">
                 <div class="text_area">
                     <form action="#">
                         <div class="response_window">
-                            <textarea data-th-text="${test}">
+                            <label>
+                                <textarea data-th-text="${test}"></textarea>
+                            </label>
 
-                            </textarea>
 
                         </div>
-
                     </form>
                 </div>
             </div>
+
+
+            <div class="gf">
+                <img src="https://i.pinimg.com/originals/2d/90/92/2d9092a49b889204284f0dea4ce7ec8b.gif" width="250" height="150"/>
+<!--                <img src="images/animation full body.gif">-->
+            </div>
+            <hr>
         </div>
     </div>
 </div>
 
-<hr>
 
-<input id="clickMe" type="button" value="clickMe" onclick="doFunction();" />
+<!--<marquee behavior="alternate" direction="left">Текст 1</marquee>-->
+
+<!--<marquee behavior="alternate" direction="left">Текст 2 scroll</marquee>-->
+
+<marquee behavior="alternate" direction="left"><img src="https://i.pinimg.com/originals/d7/34/03/d734037d264947baff2478225fa0f2e4.png" width="220px" height="150px"> </marquee>
+
+<!--<marquee behavior="alternate" direction="left"><img src="https://pixy.org/src/38/383131.png" width="220px" height="150px"> </marquee>-->
 
 
-
-<!--<img src="https://images.wallpaperscraft.ru/image/single/cherep_ostrov_misticheskij_124574_1280x720.jpg" width="300" height="200">-->
-
-<div class="rt">
-    <form action="home">
-        <button class="button28" type="submit">
-            <img src="https://image.fonwall.ru/o/wq/artwork-concept-art-digital-art-duelyst.jpeg?auto=compress&fit=crop&w=1920&h=1080&domain=img3.fonwall.ru" width="50" height="50" alt="стрела">
-        </button>
-        <p>На главную</p>
-    </form>
-
-    <form action="animation_3D">
-        <button class="button28" type="submit">
-            <img src="https://image.fonwall.ru/o/dq/assassins-creed-origins-action-adventure.jpg?auto=compress&fit=resize&w=1200&display=large&domain=img3.fonwall.ru" width="50" height="50" alt="топор">
-        </button>
-        <p>На animation_3D</p>
-    </form>
-
-    <form action="#">
-        <button class="button28" type="submit">
-            <img src="images/Bow00_icon.png" width="50" height="50" alt="лук">
-        </button>
-    </form>
-
-    <form action="page_four">
-        <button class="button28" type="submit">
-            <img src="images/Mace00_icon.png" width="50" height="50" alt="булава">
-        </button>
-        <p>На page_four</p>
-    </form>
-
-    <form action="#">
-        <button class="button28" type="submit">
-            <img src="images/Shield00_icon.png" width="50" height="50" alt="щит">
-        </button>
-    </form>
-
-    <form action="#">
-        <button class="button28" type="submit">
-            <img src="images/Sword00_icon.png" width="50" height="50" alt="меч">
-        </button>
-    </form>
-
-    <form action="#">
-        <button class="button28" type="submit">
-            <img src="images/Staff00_icon.png" width="50" height="50" alt="посох">
-        </button>
-    </form>
+<div class="xv">
+    <div class="pagination">
+        <a href="animation_3D">&laquo;</a>
+        <a href="home">1</a>
+        <a href="animation_3D">2</a>
+        <a class="active" href="page_three">3</a>
+        <a href="page_four">4</a>
+        <a href="page_four">&raquo;</a>
+    </div>
 </div>
 
-<div class="pagination">
-    <a href="animation_3D">&laquo;</a>
-    <a href="home">1</a>
-    <a href="animation_3D">2</a>
-    <a class="active" href="page_three">3</a>
-    <a href="page_four">4</a>
-    <a href="page_four">&raquo;</a>
-</div>
 
 </body>
 </html>

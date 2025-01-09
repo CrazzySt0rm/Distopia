@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Sixth</title>
+</head>
+
+<style>
+
+    body {
+    background: linear-gradient(to right, #757f9a, #d7dde8);
+    }
+
+    .buttonCustom {
+    background: linear-gradient(to right, #403b4a, #e7e9bb);
+    box-shadow: (0, 0, 0, 3px);
+    }
+    .buttonCustom:hover {
+    background: linear-gradient(to right, #403b4a, #e7e9bb);
+
+    }
+    .buttonCustom:hover:active {
+    background: linear-gradient(to left, #403b4a, #e7e9bb);
+    transform: 25deg;
+    margin-left: 10px;
+    }
+
+    .card {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    }
+
+    .btn-bck {
+    display: flex;
+    justify-content: flex-start;
+    }
+
+    .upl {
+    display: flex;
+    justify-content: center;
+    }
+</style>
+
+
+
+
+<body>
+
+<h1>Шестая страница</h1>
+
+<div class="card">
+
+    <div class="btn-on">
+        <p>On</p>
+    </div>
+
+    <div class="btn-bck">
+        <form action="#">
+            <button class="buttonCustom" type="submit" id="buttonY">noidea</button>
+
+        </form>
+    </div>
+
+    <div class="ml"><p>Off</p></div>
+
+
+</div>
+
+<div class="upl">
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label>Файл</label>
+        <input type="file" name="file"><br><br>
+        <label>Название</label>
+        <input type="text" name="name" placeholder="name"><br><br>
+        <label>Описание</label>
+        <input type="text" name="description" placeholder="description"><br><br>
+        <input type="submit" class="buttonCustom" value="upload">
+
+<!--        <input type="text" name="name" placeholder="name">-->
+<!--        <input type="text" name="name" placeholder="name">-->
+<!--        <input type="text" name="name" placeholder="name">-->
+<!--        <input type="text" name="name" placeholder="name">-->
+
+    </form>
+</div>
+
+<div class="present_image">
+    <img data-th-src="@{/files/{fileOid}(fileOid=${fileOid})}" alt="Image" src="">
+</div>
+
+
+
+</body>
+</html>

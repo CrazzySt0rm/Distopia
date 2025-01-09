@@ -17,7 +17,10 @@ public class Dystopia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-//    private String name;
-//    private String phone;
+    private String name;
+    private String phone;
     private String message;
+    private String gender;
+    private String studentCourses;
+
 }
