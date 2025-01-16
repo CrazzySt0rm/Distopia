@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Page Sixth</title>
@@ -40,10 +40,24 @@
     display: flex;
     justify-content: center;
     }
+
+    .upl_two {
+    display: flex;
+    justify-content: center;
+    }
+
+    p {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    }
+
+    .present_image {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    }
 </style>
-
-
-
 
 <body>
 
@@ -86,9 +100,37 @@
 </div>
 
 <div class="present_image">
-    <img data-th-src="@{/files/{fileOid}(fileOid=${fileOid})}" alt="Image" src="">
+<!--    <img data-th-src="@{/files/{fileOid}(fileOid=${fileOid})}" alt="Image" src=""><br><br>-->
+<!--    <img data-th-src="@{/images/1}" alt="Image" src="">-->
+
+<!--    <img th:src="@{'/image/' + ${1} + '/download'}" />-->
+<!--    <img th:src="@{'/image/' + 1 + '/download'}" />-->
+    <img src="/images/1" alt="Пример изображения">
+
+
 </div>
 
+<p>Старый добрый вариант сохранения изображения в базу данных</p><br><br>
+
+<div class="upl_two">
+
+
+    <form action="/image_stat/create" method="post" enctype="multipart/form-data">
+        <label>Файл</label>
+        <input type="file" name="file1"><br><br>
+        <label>Название</label>
+        <input type="text" name="name" placeholder="name"><br><br>
+        <label>Описание</label>
+        <input type="text" name="description" placeholder="description"><br><br>
+        <input type="submit" class="buttonCustom" value="upload">
+
+        <!--        <input type="text" name="name" placeholder="name">-->
+        <!--        <input type="text" name="name" placeholder="name">-->
+        <!--        <input type="text" name="name" placeholder="name">-->
+        <!--        <input type="text" name="name" placeholder="name">-->
+
+    </form>
+</div>
 
 
 </body>

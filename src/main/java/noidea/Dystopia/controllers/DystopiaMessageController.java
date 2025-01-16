@@ -17,7 +17,6 @@ public class DystopiaMessageController {
 
     private final DystopiaService dystopiaService;
 
-
     @PostMapping("/dystopia_message")
     public String createDystopiaText(DystopiaDTO dystopiaDTO, Model model) {
         model.addAttribute(dystopiaService.createDist(dystopiaDTO));

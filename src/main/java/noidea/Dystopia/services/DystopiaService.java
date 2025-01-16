@@ -16,6 +16,7 @@ public class DystopiaService {
 
     private final DystopiaRepository dystopiaRepository;
 
+
     public Dystopia createDist(DystopiaDTO dystopiaDTO) {
         return dystopiaRepository.save(Dystopia.builder()
                 .name(dystopiaDTO.getName())

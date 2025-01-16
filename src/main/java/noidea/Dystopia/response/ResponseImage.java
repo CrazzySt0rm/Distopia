@@ -1,8 +1,10 @@
 package noidea.Dystopia.response;
 
+import org.springframework.http.ResponseEntity;
+
 import java.time.LocalDateTime;
 
-public class ResponseFile {
+public class ResponseImage {
 
     private String name;
     private String url;
@@ -16,7 +18,7 @@ public class ResponseFile {
 
     private LocalDateTime dateOfCreated;
 
-    public ResponseFile(String name, String url, String contentType, String description, long size, LocalDateTime dateOfCreated, int length) {
+    public ResponseImage(String name, String url, String contentType, String description, long size, LocalDateTime dateOfCreated, int length) {
         this.name = name;
         this.url = url;
         this.contentType = contentType;
@@ -25,6 +27,4 @@ public class ResponseFile {
         this.dateOfCreated = dateOfCreated;
 
     }
-
 }
-

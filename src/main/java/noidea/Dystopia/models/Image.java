@@ -6,12 +6,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.tomcat.util.codec.binary.Base64;
-import org.hibernate.annotations.GenericGenerator;
-
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "files")
+@Table(name = "images")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,9 +17,9 @@ import java.time.LocalDateTime;
 public class Image {
 
     @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
+    private long id;
 
     private String originalFileName;
 
@@ -29,17 +27,14 @@ public class Image {
 
     private long size;
 
-
-
     private String contentType;
-
-
-    private String description;
 
     private boolean isPreviewImage;
 
     @Lob
     private byte[] imageData;
+
+
 
     private LocalDateTime dateOfCreated;
 
@@ -47,52 +42,30 @@ public class Image {
 
     @PrePersist
     private void init() {
-
         dateOfCreated = LocalDateTime.now();
     }
 
-    public Image(String fileName, String contentType, byte[] imageData) {
-    }
+
+    private String description;
+
+
+
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    private ImageStat imageStat;
 
     public String generateBase64Image() {
         return Base64.encodeBase64String(this.imageData);
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getContentType() {
-        return contentType;
-    }
-
-    public void setContentType(String contentType) {
-        this.contentType = contentType;
     }
 
     public byte[] getImageData() {
         return imageData;
     }
 
-    public void setData(byte[] imageData) {
+    public void setImageData(byte[] imageData) {
         this.imageData = imageData;
     }
 
-    public long getSize() {
-        return size;
-    }
 
-    public void setSize(long size) {
-        this.size = size;
-    }
 
     public String getDescription() {
         return description;
@@ -110,12 +83,8 @@ public class Image {
         this.dateOfCreated = dateOfCreated;
     }
 
-
-
 }
 
 
 
-//    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-//    private ImageStat imageStat;
-//}
+

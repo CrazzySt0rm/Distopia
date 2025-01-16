@@ -20,7 +20,7 @@ public class EmailController {
 
     @PostMapping("/create_email")
     public String sdMail(Model model, DystopiaDTO dystopiaDTO) throws MessagingException {
-        model.addAttribute(emailService.sendEmail("Jonekarter85@gmail.com","TestTwo", dystopiaDTO.getMessage()));
+        model.addAttribute(emailService.sendEmail("vlad196501@gmail.com","TestTwo", dystopiaDTO.getMessage()));
         return "page_four";
     }
 
